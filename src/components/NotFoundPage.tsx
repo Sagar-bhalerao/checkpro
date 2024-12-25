@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const NotFoundPage = () => {
   return (
-    <div className="max-w-[50rem] flex flex-col mx-auto size-full">
+    <div className="max-w-[50rem] flex flex-col mx-auto size-full ">
     {/* <!-- ========== HEADER ========== --> */}
     <header className="mb-auto flex justify-center z-50 w-full py-4">
       <nav className="px-4 sm:px-6 lg:px-8">
@@ -29,7 +29,7 @@ const NotFoundPage = () => {
     {/* <!-- ========== END MAIN CONTENT ========== --> */}
   
     {/* <!-- ========== FOOTER ========== --> */}
-    <footer className="mt-auto text-center py-5">
+    <footer className="mt-auto text-center py-10">
       <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
         <p className="text-sm text-gray-500 dark:text-neutral-500">© All Rights Reserved. 2022.</p>
       </div>

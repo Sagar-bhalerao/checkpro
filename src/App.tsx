@@ -9,6 +9,7 @@ import DefaultLayout from "./layout/DefaultLayout";
 import Homepage from "./pages/homepage/Homepage";
 
 import NotFoundPage from "./components/NotFoundPage"
+import ManagerFAQ from "./pages/transaction/ManagerFAQ/ManagerFAQ";
 
 declare global {
   interface Window {
@@ -30,6 +31,8 @@ function App() {
       <Route element={<DefaultLayout />}>
         {/* Homepage route */}
         <Route index path="/" element={<Homepage />} />
+        <Route path="/transaction/managerfaq" element={<ManagerFAQ />} />
+        
    
         {/* Catch-all route for unmatched pages */}
         <Route path="*" element={<NotFoundPage/>} />
