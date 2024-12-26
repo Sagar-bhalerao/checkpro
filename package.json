@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@preline/overlay": "^2.6.0",
+    "@reduxjs/toolkit": "^2.5.0",
     "axios": "^1.7.9",
     "browser-image-compression": "^2.0.2",
     "preline": "^2.6.0",
@@ -17,13 +19,17 @@
     "react-animated-cursor": "^2.11.2",
     "react-dom": "^18.3.1",
     "react-icons": "^5.4.0",
+    "react-js-pagination": "^3.0.3",
+    "react-redux": "^9.2.0",
     "react-router-dom": "^7.1.1",
     "react-toastify": "^11.0.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
+    "@tailwindcss/forms": "^0.5.9",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
+    "@types/react-js-pagination": "^3.0.7",
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.17.0",
