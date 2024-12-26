@@ -235,26 +235,25 @@ const ManagerFAQ = () => {
         <Loader />
       ) : (
         <>
-          <div className="flex flex-wrap mb-4">
+          <div className="flex flex-wrap mb-4 gap-1">
             {data?.map((item: any, index) => {
-              const status: any = questionStatus.find((q: any) => q.q_id === item.id)?.q_flag;
-              
+              const status: any = questionStatus.find((q: any) => q.q_id === item.id)?.q_flag;             
               
               return (
                 <button
                   key={index}
                   onClick={() => handleQuestionClick(index)}
-                  className={`mx-1 my-1 px-2 py-1 
+                  className={`py-1 px-2  inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-800 text-gray-800 hover:border-gray-500 hover:text-gray-500 focus:outline-none focus:border-gray-500 focus:text-gray-500 disabled:opacity-50 disabled:pointer-events-none dark:border-white dark:text-white dark:hover:text-neutral-300 dark:hover:border-neutral-300"
               ${
                 status === 'InCompleted'
-                  ? 'bg-danger'
+                  ? 'bg-red-600'
                   : status === 'InProgress'
-                  ? 'bg-warning'
+                  ? 'bg-amber-500'
                   : status === 'Completed'
-                  ? 'bg-success'
+                  ? 'bg-green-600'
                   : 'bg-body'
               } 
-              text-white rounded`}
+               rounded`}
                 >
                   {index + 1}
                 </button>
@@ -263,14 +262,15 @@ const ManagerFAQ = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {data?.map((item: any, index: any) => {
-              // const status:any = questionStatus.find((q:any)=> q.q_id === item.id)?.q_flag
+              const status:any = questionStatus.find((q:any)=> q.q_id === item.id)?.q_flag
               return (
                 <div
                   key={item.id}
                   ref={questionRefs.current[index]}
-                  className={`p-2 `}
+                  className={` ${status === "Completed" ? "cursor-not-allowed opacity-50" : "cursor-pointer"} p-2 transform transition-all duration-300 hover:scale-105 hover:shadow-lg rounded-lg overflow-hidden `}
                 >
                   <QuestionsCard
+                  statusQ = {status}
                     Qstatus={questionStatus}
                     id={item.id}
                     index={index + 1}

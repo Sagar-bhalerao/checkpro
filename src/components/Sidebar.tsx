@@ -338,23 +338,23 @@ const Sidebar = () => {
                         </a>
                       </li>
                       <li>
-                        <a
+                        <NavLink
                           className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:text-neutral-200"
-                          href="#"
+                         to="/master/memberview"
                         >                                                 
                           <MdGroups/> Members
-                        </a>
+                        </NavLink>
                       </li>
                       <li>
-                        <a
+                        <NavLink
                           className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:text-neutral-200"
-                          href="#"
+                          to="/master/viewprogress"
                         >                                                                                        
                         <TbProgressCheck size={20} /> View Progress
-                        </a>
+                        </NavLink>
                       </li>
                     </ul>
-                  </div>
+                  </div>                  
                 </li>
                 {/* master end here */}
 
@@ -416,13 +416,13 @@ const Sidebar = () => {
                         </Link>
                       </li>
                       <li>
-                        <a
+                        <NavLink
                           className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:text-neutral-200"
-                          href="#"
+                          to="/transaction/adminfaq"
                         >
                         
                           <FaRegQuestionCircle /> Admin FAQ
-                        </a>
+                        </NavLink>
                       </li>
                      
                     </ul>

@@ -6,6 +6,7 @@ interface QuestionProp {
     question: string;
     Qstatus: any;
     index: number;
+    statusQ:any
     onAnswerChange: (
       id: string,
       status: string,
@@ -13,10 +14,10 @@ interface QuestionProp {
       image?: File | null,
     ) => void;
   }
-const QuestionsCard: FC<QuestionProp> = ({ id, question, onAnswerChange, Qstatus, index}) => {
+const QuestionsCard: FC<QuestionProp> = ({ id, question, onAnswerChange,  index,statusQ}) => {
     const [status, setStatus] = useState('');
     const [description, setDescription] = useState('');
-    const [image, setImage] = useState<File | null>(null);
+    const [_image, setImage] = useState<File | null>(null);
     const [isLoading, setIsLoading] = useState(false);
   
     const handleStatusChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -25,7 +26,7 @@ const QuestionsCard: FC<QuestionProp> = ({ id, question, onAnswerChange, Qstatus
       onAnswerChange(id, value, description);
     };
   
-    const handleDescriptionChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const handleDescriptionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       const value = e.target.value;
       setDescription(value);
       onAnswerChange(id, status, value);
@@ -46,89 +47,42 @@ const QuestionsCard: FC<QuestionProp> = ({ id, question, onAnswerChange, Qstatus
       }
     };
   return (
-    <div className="flex flex-col border-2 hover:font-semibold hover:border-blue-500 duration-300 dark:hover:border-blue-600 bg-red-100  shadow-sm rounded-xl dark:bg-red-100 dark:border-red-100 dark:shadow-red-700/70">
-    <div className="p-4 md:p-5">
-    <h3 className="text-lg font-bold text-gray-800 dark:text-gray-900">
-    {index}. {''}
-    {question}
-      </h3>
-      <form action="#">
-          <div className="p-6.5">
-            <div className="mb-2">
-              <label className="mb-2.5 block text-black dark:text-white">
-                Status
-              </label>
-              <div className="relative z-20 bg-transparent dark:bg-form-input ">
-                <select
-                  className="h-12 relative z-20 w-full appearance-none rounded border border-stroke bg-transparent py-3 px-5 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
-                  value={status}
-                  onChange={handleStatusChange}
-                >
-                  <option value="">Select Status</option>
-                  <option className="text-success" value="Completed">
-                    Completed
-                  </option>
-                  <option className="text-danger" value="InCompleted">
-                    InCompleted
-                  </option>
-                  <option className="text-warning" value="InProgress">
-                    InProgress
-                  </option>
-                </select>
-                <span className="absolute top-1/2 right-4 z-30 -translate-y-1/2">
-                  <svg
-                    className="fill-current"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g opacity="0.8">
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
-                        fill=""
-                      ></path>
-                    </g>
-                  </svg>
-                </span>
-              </div>
+   
+      <div  className="flex flex-col dark:hover:border-blue-500 border-2 hover:border-blue-600 transition-all duration-300 ease-in-out bg-white shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
+        <div className="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-4 md:px-5 dark:bg-neutral-900 dark:border-neutral-700">
+          <p className="mt-1 text-sm text-black dark:text-white">
+            <span className="inline-flex font-semibold text-lg">{index}.{question}</span>
+          </p>
+        </div>
+        <div className="p-4 md:p-5">
+          <form className="space-y-4">
+            <div>
+              <label htmlFor={`hs-select-label`} className="block text-sm font-medium mb-2 dark:text-white">Status <span className="text-red-600">*</span></label>
+              <select onChange={handleStatusChange} id={`hs-select-label`} className="bg-slate-100 py-2 px-4 pr-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
+                <option selected>Select The Status</option>
+                <option>Completed</option>
+                <option>InCompleted</option>
+                <option>InProgress</option>
+              </select>
             </div>
 
-            <div className="mb-2">
-              <label className="mb-2.5 block text-black dark:text-white">
-                Description
-              </label>
-              <textarea
-                rows={1}
-                placeholder="Type your message"
-                className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
-                value={description}
-                onChange={handleDescriptionChange}
-              ></textarea>
+            <div className="w-full">
+              <label htmlFor={`input-label-with-helper-text`} className="block text-sm font-medium mb-2 dark:text-white">Description <span className="text-red-600">*</span></label>
+              <input onChange={handleDescriptionChange} type="text" id={`input-label-with-helper-text`} className="bg-slate-100 py-2 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="Enter Description" />
             </div>
+            
+            {status === "Completed" && (<div className="w-full">
+              <label htmlFor={`input-label-with-file`} className="block text-sm font-medium mb-2 dark:text-white">Upload File <span className="text-red-600">*</span></label>
+              <input onChange={handleImageChange} type="file" id={`input-label-with-file`}  accept="image/*"
+                  capture="environment"  className="bg-slate-100 py-2 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" />
+                  {isLoading && <div>Loading...</div>}
 
-            {status === 'Completed' && (
-              <div>
-                <label className="mb-3 block text-black dark:text-white ">
-                  Attach Image
-                </label>
-                <input
-                  type="file"
-                  onChange={handleImageChange}
-                  accept="image/*"
-                  capture="environment"            
-                  className="h-12 w-full rounded-md border border-stroke p-3 outline-none transition file:mr-4 file:rounded file:border-[0.5px] file:border-stroke file:bg-[#EEEEEE] file:py-1 file:px-2.5 file:text-sm file:font-medium focus:border-primary file:focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:file:border-strokedark dark:file:bg-white/30 dark:file:text-white"
-                />
-                {isLoading && <div>Loading...</div>}
-              </div>
-            )}
-          </div>
-        </form>
-    </div>
-  </div>
+            </div>)}
+            
+          </form>
+        </div>
+      </div>
+
   )
 }
 
