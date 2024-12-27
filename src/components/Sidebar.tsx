@@ -1,6 +1,7 @@
 
 import { FaRegEdit, FaRegQuestionCircle } from 'react-icons/fa';
 import { GrTransaction } from 'react-icons/gr';
+import { IoSettingsOutline } from 'react-icons/io5';
 import { MdGroups, MdLeaderboard } from 'react-icons/md';
 import { TbProgressCheck } from 'react-icons/tb';
 import { Link, NavLink } from 'react-router-dom';
@@ -68,221 +69,7 @@ const Sidebar = () => {
                   </a>
                 </li>
 
-                <li className="hs-accordion" id="users-accordion">
-                  <button
-                    type="button"
-                    className="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200"
-                    aria-expanded="true"
-                    aria-controls="users-accordion-child"
-                  >
-                    <svg
-                      className="shrink-0 size-4"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                      <circle cx="9" cy="7" r="4" />
-                      <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                    </svg>
-                    Users
-                    <svg
-                      className="hs-accordion-active:block ms-auto hidden size-4"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="m18 15-6-6-6 6" />
-                    </svg>
-                    <svg
-                      className="hs-accordion-active:hidden ms-auto block size-4"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="m6 9 6 6 6-6" />
-                    </svg>
-                  </button>
-
-                  <div
-                    id="users-accordion-child"
-                    className="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden"
-                    role="region"
-                    aria-labelledby="users-accordion"
-                  >
-                    <ul
-                      className="hs-accordion-group ps-8 pt-1 space-y-1"
-                      data-hs-accordion-always-open
-                    >
-                      <li className="hs-accordion" id="users-accordion-sub-1">
-                        <button
-                          type="button"
-                          className="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200"
-                          aria-expanded="true"
-                          aria-controls="users-accordion-sub-1-child"
-                        >
-                          Sub Menu 1
-                          <svg
-                            className="hs-accordion-active:block ms-auto hidden size-4"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <path d="m18 15-6-6-6 6" />
-                          </svg>
-                          <svg
-                            className="hs-accordion-active:hidden ms-auto block size-4"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <path d="m6 9 6 6 6-6" />
-                          </svg>
-                        </button>
-
-                        <div
-                          id="users-accordion-sub-1-child"
-                          className="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden"
-                          role="region"
-                          aria-labelledby="users-accordion-sub-1"
-                        >
-                          <ul className="pt-1 space-y-1">
-                            <li>
-                              <a
-                                className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:text-neutral-200"
-                                href="#"
-                              >
-                                Link 1
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:text-neutral-200"
-                                href="#"
-                              >
-                                Link 2
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:text-neutral-200"
-                                href="#"
-                              >
-                                Link 3
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                      </li>
-                      <li className="hs-accordion" id="users-accordion-sub-2">
-                        <button
-                          type="button"
-                          className="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200"
-                          aria-expanded="true"
-                          aria-controls="users-accordion-sub-2-child"
-                        >
-                          Sub Menu 2
-                          <svg
-                            className="hs-accordion-active:block ms-auto hidden size-4"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <path d="m18 15-6-6-6 6" />
-                          </svg>
-                          <svg
-                            className="hs-accordion-active:hidden ms-auto block size-4"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <path d="m6 9 6 6 6-6" />
-                          </svg>
-                        </button>
-
-                        <div
-                          id="users-accordion-sub-2-child"
-                          className="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden"
-                          role="region"
-                          aria-labelledby="users-accordion-sub-2"
-                        >
-                          <ul className="pt-1 space-y-1">
-                            <li>
-                              <a
-                                className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:text-neutral-200"
-                                href="#"
-                              >
-                                Link 1
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:text-neutral-200"
-                                href="#"
-                              >
-                                Link 2
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:text-neutral-200"
-                                href="#"
-                              >
-                                Link 3
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-
-
-                 {/* Master */}
+                         {/* Master */}
                 <li className="hs-accordion" id="master-accordion">
                   <button
                     type="button"
@@ -330,16 +117,24 @@ const Sidebar = () => {
                   >
                     <ul className="ps-8 pt-1 space-y-1">
                       <li>
-                        <a
-                          className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:text-neutral-200"
-                          href="#"
+                        <NavLink
+                           className={({isActive})=>`w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-300
+                           ${isActive ? "font-bold dark:text-blue-700 dark:bg-neutral-700  !text-blue-500"
+                                      : "hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-300"
+                           }
+                          `}
+                          to="/master/questionview"
                         >
                         <FaRegEdit /> FAQ
-                        </a>
+                        </NavLink>
                       </li>
                       <li>
                         <NavLink
-                          className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:text-neutral-200"
+                          className={({isActive})=>`w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-300
+                          ${isActive ? "font-bold dark:text-blue-700 dark:bg-neutral-700  !text-blue-500"
+                                     : "hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-300"
+                          }
+                         `}
                          to="/master/memberview"
                         >                                                 
                           <MdGroups/> Members
@@ -347,7 +142,11 @@ const Sidebar = () => {
                       </li>
                       <li>
                         <NavLink
-                          className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:text-neutral-200"
+                          className={({isActive})=>`w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-300
+                          ${isActive ? "font-bold dark:text-blue-700 dark:bg-neutral-700  !text-blue-500"
+                                     : "hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-300"
+                          }
+                         `}
                           to="/master/viewprogress"
                         >                                                                                        
                         <TbProgressCheck size={20} /> View Progress
@@ -406,18 +205,26 @@ const Sidebar = () => {
                   >
                     <ul className="ps-8 pt-1 space-y-1">
                       <li>
-                        <Link
-                          className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:text-neutral-200"
+                        <NavLink
+                          className={({isActive})=>`w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-300
+                          ${isActive ? "font-bold dark:text-blue-700 dark:bg-neutral-700  !text-blue-500"
+                                     : "hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-300"
+                          }
+                         `}
                           to= "/transaction/managerfaq"
                         >
                            
                       <FaRegQuestionCircle/> Manager FAQ
                               
-                        </Link>
+                        </NavLink>
                       </li>
                       <li>
                         <NavLink
-                          className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:text-neutral-200"
+                          className={({isActive})=>`w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-300
+                          ${isActive ? "font-bold dark:text-blue-700 dark:bg-neutral-700  !text-blue-500"
+                                     : "hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-300"
+                          }
+                         `}
                           to="/transaction/adminfaq"
                         >
                         
@@ -465,9 +272,9 @@ const Sidebar = () => {
                 </li>
 
                {/* logout */}
-                <li>
+                <li className=''>
                   <NavLink
-                  to="/tables-layout"
+                  to="/settings"
                     className={({isActive})=>`w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-300
                      ${isActive ? "font-bold dark:text-blue-700 dark:bg-neutral-700  !text-blue-500"
                                 : "hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-300"
@@ -475,24 +282,8 @@ const Sidebar = () => {
                     `}
                    
                   >
-                   <svg
-                    className="fill-current"
-                    width="22"
-                    height="22"
-                    viewBox="0 0 22 22"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15.5375 0.618744H11.6531C10.7594 0.618744 10.0031 1.37499 10.0031 2.26874V4.64062C10.0031 5.05312 10.3469 5.39687 10.7594 5.39687C11.1719 5.39687 11.55 5.05312 11.55 4.64062V2.23437C11.55 2.16562 11.5844 2.13124 11.6531 2.13124H15.5375C16.3625 2.13124 17.0156 2.78437 17.0156 3.60937V18.3562C17.0156 19.1812 16.3625 19.8344 15.5375 19.8344H11.6531C11.5844 19.8344 11.55 19.8 11.55 19.7312V17.3594C11.55 16.9469 11.2062 16.6031 10.7594 16.6031C10.3125 16.6031 10.0031 16.9469 10.0031 17.3594V19.7312C10.0031 20.625 10.7594 21.3812 11.6531 21.3812H15.5375C17.2219 21.3812 18.5625 20.0062 18.5625 18.3562V3.64374C18.5625 1.95937 17.1875 0.618744 15.5375 0.618744Z"
-                      fill=""
-                    />
-                    <path
-                      d="M6.05001 11.7563H12.2031C12.6156 11.7563 12.9594 11.4125 12.9594 11C12.9594 10.5875 12.6156 10.2438 12.2031 10.2438H6.08439L8.21564 8.07813C8.52501 7.76875 8.52501 7.2875 8.21564 6.97812C7.90626 6.66875 7.42501 6.66875 7.11564 6.97812L3.67814 10.4844C3.36876 10.7938 3.36876 11.275 3.67814 11.5844L7.11564 15.0906C7.25314 15.2281 7.45939 15.3312 7.66564 15.3312C7.87189 15.3312 8.04376 15.2625 8.21564 15.125C8.52501 14.8156 8.52501 14.3344 8.21564 14.025L6.05001 11.7563Z"
-                      fill=""
-                    />
-                  </svg>
-                  Log Out
+                  <IoSettingsOutline size={18} />
+                Settings
                   </NavLink>
                 </li>
                 {/* logout end here */}

@@ -1,26 +1,31 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoArrowBackSharp } from "react-icons/io5";
 import { useParams, Link } from "react-router-dom";
 import { GetFilledChecklist } from "../../services/MasterApis";
 import Nodata from "../../images/FallBack.png";
 import Table from "../../components/Table";
+import { useDispatch } from "react-redux";
+import { setTitle } from "../../feature/BreadCrumbSlice";
 
 const FilledChecklist = () => {
+  const dispatch = useDispatch();
   const { loc_id } = useParams();
   let currentDate = new Date().toISOString().slice(0, 10);
   let [year, month, day] = currentDate.split("-");
   let formattedDate = `${day}-${month}-${year}`;
-
+  useEffect(()=>{
+    dispatch(setTitle({title:"Filled Checklist"}))
+ },[])
   const [date, setDate] = useState(formattedDate);
   const [data, setData] = useState([]);
   const [loading, setloading] = useState(false);
   
-  if (data === undefined || null) {
+  if (data === undefined || data === null) {
     return (
-      <div className="flex-row justify-center items-center font-bold text-2xl">
+      <div className="flex-row justify-center items-center font-bold text-2xl h-screen">
         <Link
           to={"/"}
-          className="inline-flex items-center h-3 justify-center gap-2.5 rounded-full bg-bodydark  py-4 px-10 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10"
+          className="inline-flex items-center h-3 justify-center gap-2.5 rounded-full bg-bodydark  py-4 px-10 text-center font-medium hover:bg-opacity-90 lg:px-8 xl:px-10"
         >
           <span>
             <IoArrowBackSharp size={20} />
@@ -49,10 +54,10 @@ const FilledChecklist = () => {
   };
   console.log(data);
  
+
   return (
     <>
-
-<div className="p-4">
+<div className={`p-4  ${data.length === 0 ? 'h-screen' :'h-auto'} `}>
         
   <div className="flex flex-col md:flex-row justify-between gap-4">
     <div className="w-full md:w-1/2 lg:w-1/3">
@@ -95,7 +100,6 @@ const FilledChecklist = () => {
       )}
       
 </div>
-
 
 </>
   );

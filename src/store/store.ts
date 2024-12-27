@@ -1,10 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import authSlice  from '../feature/authSlice';
-// ...
+import BreadCrumbSlice from "../feature/BreadCrumbSlice"
 
 export const store = configureStore({
   reducer: {
     auth: authSlice,
+    breadCrumb:BreadCrumbSlice
   },
 });
 

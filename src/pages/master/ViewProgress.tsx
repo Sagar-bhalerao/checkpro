@@ -5,8 +5,11 @@ import { GetLocations } from "../../services/Auth.Apis";
 import NoData from "../../images/FallBack.png";
 
 import LocationCard from "../../components/LocationCard";
+import { useDispatch } from "react-redux";
+import { setTitle } from "../../feature/BreadCrumbSlice";
 
 const ViewProgress = () => {
+  const dispatch = useDispatch();
   const [data, setData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -37,6 +40,10 @@ const ViewProgress = () => {
       </div>
     );
   }
+
+    useEffect(()=>{
+        dispatch(setTitle({title:"Progress View"}))
+     },[])
   return (
     <div className="h-screen">
     <p className="flex animate-bounce justify-center text-2xl font-semibold bg-clip-text bg-gradient-to-l from-blue-600 to-violet-500 text-transparent dark:from-blue-400 dark:to-violet-400">

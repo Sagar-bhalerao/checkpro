@@ -8,8 +8,11 @@ import { FaRegCheckCircle } from "react-icons/fa";
 import Loader from "../../../comman/Loader";
 import QuestionsCard from "../../../components/QuestionsCard";
 import NoData from '../../../images/FallBack.png';
+import { setTitle } from "../../../feature/BreadCrumbSlice";
+import { useDispatch } from "react-redux";
 
 const ManagerFAQ = () => {
+  const dispatch = useDispatch();
   const [data, setData] = useState([]);
   const [answers, setAnswers] = useState({});
   const [loading, setLoading] = useState(false);
@@ -208,8 +211,12 @@ const ManagerFAQ = () => {
     week = 'regular';
   }
 
+  useEffect(()=>{
+        dispatch(setTitle({title:"Manager FAQ"}))
+     },[])
   return (
     <>
+    <div className={`${data.length === 0 ? 'h-screen':'h-auto'}`}>
       {/* toggle the week  */}
       <h1 className="flex justify-center mb-2  font-semibold">
         Select Question Type :-
@@ -297,7 +304,7 @@ const ManagerFAQ = () => {
           </div>
         </>
       )}
-
+</div>
     </>
   )
 }

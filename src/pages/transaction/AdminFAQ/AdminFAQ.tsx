@@ -5,8 +5,11 @@ import { GetAdminTransaction, GetQuestions, SubmitAdminFaq } from "../../../serv
 import { CiLocationOn } from "react-icons/ci";
 import AdminQCard from "../../../components/AdminQCard";
 import Loader from "../../../comman/Loader";
+import { useDispatch } from "react-redux";
+import { setTitle } from "../../../feature/BreadCrumbSlice";
 
 const AdminFAQ = () => {
+  const dispatch = useDispatch();
   const [data, setData] = useState([]);
   const [loading,setLoading] = useState(false);
   const [Questions, setQuestions] = useState([]);
@@ -70,8 +73,11 @@ const AdminFAQ = () => {
    setLoading(false);
    navigate('/master/viewprogress')        
   }    
+  useEffect(()=>{
+          dispatch(setTitle({title:"Admin FAQ"}))
+       },[])
   return (
-    <div className="h-auto">
+    <div className={`${Questions.length === 0 ? 'h-screen':'h-auto'}`}>
     {loading ? <Loader/>:(<div className="flex flex-wrap space-x-4 justify-center">
       {data?.map((item: any) => {
 const isLocationFilled = adminData.some((adminItem:any) => adminItem.loc_id === item.id && adminItem.u_id !== null );
