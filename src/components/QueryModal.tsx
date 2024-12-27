@@ -9,12 +9,12 @@ const QueryModal = ({showQModal,setShowQModal}:any) => {
 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
     <div className="bg-white dark:bg-neutral-800 p-4 rounded-md shadow-lg">
       
-    <div className="rounded-2xl border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+    <div className="rounded-2xl  bg-white dark:bg-neutral-700 shadow-default dark:border-strokedark dark:bg-boxdark">
             <div className="border-b border-stroke py-4 px-6.5 dark:border-strokedark">
               <h3 className="font-medium text-black dark:text-white inline-flex text-xl">
                 {' '}
          
-                <FaUserEdit className="mr-1 mt-1.1" size={23} />
+                <FaUserEdit className="mr-1 mt-1.1 mx-3 px-1" size={23} />
                 Send Meassage Regarding To The Checklist
               </h3>
             </div>
@@ -42,7 +42,7 @@ const QueryModal = ({showQModal,setShowQModal}:any) => {
                 onClick={()=>toast.success("The Description Has Been Sent")}
                 
                
-                className="mt-4 flex justify-end bg-primary text-white py-2 px-4 rounded hover:bg-opacity-90 sm:mt-6"
+                className="mt-4 flex justify-end bg-green-400 dark:text-white py-2 px-4 rounded hover:bg-opacity-90 sm:mt-6"
               >
                Send<IoMdSend className='ml-2 ' size={22}/>
               </button>
